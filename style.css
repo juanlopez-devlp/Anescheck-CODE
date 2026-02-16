@@ -1,0 +1,277 @@
+/* === Estilos globales === */
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at 30% 20%, #1e2a3a, #0f141b);
+  backdrop-filter: blur(3px);
+  color: white;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.swal2-popup.custom-swal {
+  background: radial-gradient(circle at 30% 20%, #1e2a3a, #0f141b);
+  backdrop-filter: blur(3px);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+.swal2-title, .swal2-content {
+  color: white;
+}
+
+/* === Titulo === */
+.titulo-banner {
+  background: linear-gradient(90deg, #28a745, #17a2b8);
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* === Estilos para el form === */
+.formulario-paciente {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2em;
+  background: #f4f4f4;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.formulario-paciente h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.form-group {
+  margin-bottom: 1.2em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn-guardar {
+  display: block;
+  width: 100%;
+  padding: 0.8em;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-limpiar {
+  background-color: red;
+  color: white;
+  display: block;
+  width: 100%;
+  padding: 0.8em;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* === Estilos para las tarjetas === */
+.hover-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.hover-card .card-body {
+  position: relative;
+  padding: 1rem;
+}
+
+.card-body.verde {
+  background-color: #d4edda;
+  transition: background-color 0.3s;
+}
+
+.card-body.rojo {
+  background-color: #f8d7da;
+  transition: background-color 0.3s;
+}
+
+.front-content {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* === TEXTO EXTRA ACHICADO PARA PIXEL 6 === */
+.extra-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  font-size: 0.85rem !important;
+  line-height: 1.1 !important;
+}
+
+.hover-card:hover .extra-info {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hover-card:hover .front-content {
+  opacity: 0;
+}
+
+.hover-card .card-footer {
+  z-index: 3;
+  position: relative;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+}
+
+/* Botones dentro de las tarjetas */
+.hover-card .card-footer button {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  white-space: normal;
+  word-wrap: break-word;
+  padding: 0.5rem 0.8rem;
+  min-width: 100px;
+}
+
+/* Ajuste para móviles muy pequeños */
+@media (max-width: 400px) {
+  .hover-card .card-footer button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* Ajuste de títulos de tarjetas para móviles */
+.card-title {
+  white-space: normal;
+  word-wrap: break-word;
+  font-size: 1.1em;
+  line-height: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1em;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .row.row-cols-2>.col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .formulario-paciente {
+    padding: 1.5em;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .formulario-paciente h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 10px;
+  }
+
+  .formulario-paciente {
+    margin: 0 1em;
+    padding: 1.2em;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .formulario-paciente h2 {
+    font-size: 18px;
+  }
+
+  .btn-submit {
+    font-size: 0.95em;
+    padding: 0.7em;
+  }
+
+  .hover-card .card-body,
+  .hover-card .card-footer {
+    padding: 0.8rem;
+  }
+
+  /* TEXTO EXTRA EN MOVILES PEQUEÑOS */
+  .extra-info {
+    font-size: 0.8rem !important;
+    padding: 0.7rem !important;
+  }
+
+  .card-title i {
+    font-size: 1em;
+    margin-right: 6px;
+  }
+
+  .card-title {
+    font-size: 1em;
+  }
+
+  .hover-card .card-footer .d-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+footer a {
+  color: #25D366;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checklist Cirugia</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Logo -->
+        <div class="text-center mb-4">
+            <img src="imglogo.jpg" alt="Logo" class="img-fluid" style="max-height: 500px;" />
+        </div>
+
+
+
+        <form class="formulario-paciente">
+            <h2>Datos del paciente</h2>
+
+            <!-- Nombre -->
+            <div class="form-group">
+                <label for="nombre">
+                    <i class="fa-solid fa-user"></i> Nombre
+                </label>
+                <input type="text" id="nombre" name="nombre" required />
+            </div>
+
+            <!-- Apellido -->
+            <div class="form-group">
+                <label for="apellido">
+                    <i class="fa-solid fa-user-tag"></i> Apellido
+                </label>
+                <input type="text" id="apellido" name="apellido" required />
+            </div>
+
+            <!-- Historia Clínica -->
+            <div class="form-group">
+                <label for="historiaClinica">
+                    <i class="fa-solid fa-file-medical"></i> Historia Clínica
+                </label>
+                <input type="text" id="historiaClinica" name="historiaClinica" required />
+            </div>
+
+            <!-- Alergias -->
+            <div class="form-group">
+                <label for="alergias">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Alergias
+                </label>
+                <textarea id="alergias" name="alergias" rows="3"
+                    placeholder="Ej: Penicilina, polen, frutos secos..."></textarea>
+            </div>
+
+            <!-- Observaciones -->
+            <div class="form-group">
+                <label for="observaciones">
+                    <i class="fa-solid fa-pen"></i> Observaciones
+                </label>
+                <textarea id="observaciones" name="observaciones" rows="3"
+                    placeholder="Ej: Tipo de sangre, alergias, observaciones externas.."></textarea>
+            </div>
+
+            <!-- Botón -->
+            <button type="submit" class="btn-guardar">
+                <i class="fa-solid fa-floppy-disk"></i> Guardar
+            </button>
+
+            <button type="button" class="btn-limpiar">
+                <i class="fa-solid fa-trash"></i> Limpiar
+            </button>
+
+        </form>
+
+        <Br>
+        </Br>
+
+
+
+        <!-- Título principal -->
+        <div class="titulo-banner text-center my-4 p-3 rounded">
+    <h2>Checklist de Cirugía</h2>
+</div>
+
+
+
+        <Br>
+        </Br>
+
+
+
+        <!-- Grid de tarjetas -->
+        <div class="row row-cols-2 g-3">
+
+
+
+
+            <!-- Tarjeta 1: ASA -->
+
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-user me-2"></i>ASA
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                •ASA 1. PX Sano.
+                                •ASA 2. PX Enfermedad sistemica moderada/Embarazadas.
+                                •ASA 3. PX c/Enfermedad sistemica moderada.
+                                •ASA 4. PX c/Enfermedad sistemica severa.
+                                •ASA 5. PX Moribundo.
+                                •ASA 6. PX Declarada muerte cerebral.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Monitores -->
+
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-computer me-2"></i>Monitores
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                •Enchufes
+                                •Luces encedidas
+                                •Carga y corriente electrica verificadas
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Tarjeta 3: Anestésicos Inhalatorios -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-wind me-2"></i>Anestésicos Inhalatorios
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Cargados.
+                                • Cerrado correctamente.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4: Aspiración -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-faucet-drip me-2"></i>Aspiración
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Abierta.
+                                • Conectada.
+                                • Que aspire correctamente.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5: Bombas de Infusión -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-battery-full me-2"></i>Bombas de Infusión
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Batería cargada.
+                                • Conectadas a la corriente eléctrica.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 6: Vía -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-syringe me-2"></i>Vía
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Conectadas y purgadas.
+                                • Materiales periféricos disponibles.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 7: Laringo-Tubo -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-lungs me-2"></i>Laringo-Tubo
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Luz funcional.
+                                • Integridad del tubo.
+                                • Número de rama correcto.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 8: Drogas de Inducción -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-pills me-2"></i>Drogas de Inducción
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Midazolam
+                                • Fentanilo
+                                • Propofol
+                                • Rocuronio
+                                • Atropina
+                                • Remifentanilo
+                                • Lidocaína 2%
+                                • Antibiótico
+                                • Efedrina
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 9: Drogas de Reversión -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-rotate-left me-2"></i>Drogas de Reversión
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Neostigmina
+                                • Cafeína
+                                • Flumazenil
+                                • Naloxona
+                                • Sugammadex
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 10: Drogas de Rescate -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-kit-medical me-2"></i>Drogas de Rescate
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Ketamina
+                                • Diclofenac
+                                • Ketorolac
+                                • Dipirona
+                                • Dexametasona
+                                • Ondansetrón
+                                • Metoclopramida
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 11: Caloventor -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-fire me-2"></i>Caloventor
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Disponibilidad.
+                                • Correcto funcionamiento.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 12: Mesa de Anestesia -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-table me-2"></i>Mesa de Anestesia
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Chequeo de fugas.
+                                • Sensor de flujo.
+                                • Sensor de oxígeno.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 13: Sistema Externo de Ventilación -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-wind me-2"></i>Sistema Externo de Ventilación
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Baraka pediátrico/adulto.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 14: Flumiter Externo -->
+            <div class="col">
+                <div class="card text-center shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="front-content">
+                            <h3 class="card-title fs-5">
+                                <i class="fa-solid fa-gauge-high me-2"></i>Flumiter Externo
+                            </h3>
+                        </div>
+                        <div class="extra-info">
+                            <p>
+                                • Verificar disponibilidad del flumiter en la torre o pared del quirófano.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-success btn-sm">✔️</button>
+                            <button class="btn btn-danger btn-sm">❌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Fin del .row -->
+
+    </div> <!-- Fin del .container -->
+
+
+    <div>
+        <br>
+        <br>
+        <br>
+
+       <footer class="text-center py-3">
+    <p>&copy; 2025 Juan Pablo Lopez Lacuesta | Todos los derechos reservados.</p>
+    <p>
+        <a href="https://wa.me/5491151076364" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacto
+        </a>
+    </p>
+</footer>
+
+
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
