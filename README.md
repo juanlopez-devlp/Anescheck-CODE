@@ -5,8 +5,8 @@ AnestCheck es una aplicación interactiva tipo formulario diseñada para facilit
 ## 🔹 Tecnologías
 
 - HTML, CSS, JavaScript
-- Node.js 
-- Android 
+- Node.js (Adaptable)
+- Android (Adaptable)
 - Git & GitHub para control de versiones
 
 ## 🚀 Características
